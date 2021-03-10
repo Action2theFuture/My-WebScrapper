@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Remote Jobs
+	</title>
+	<link rel="stylesheet" href="https://unpkg.com/mvp.css"/>
+  
+  <link rel="icon" type="image/x-icon" sizes="32x32" href="/favicon/favicon-32x32.ico">
+  <link rel="shortcut icon" type="image/x-icon" sizes="32x32" href="/favicon/favicon-32x32.ico">
+
+  <script src="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/xmas/snow.js"></script>
+  <style>
+    body {
+            background-color: #9b070f;
+        }
+    * {
+      color:white;
+    }
+  </style>
+</head>
+
+<body>
+	<header>
+		<h1>Remote Jobs</h1>
+		<h3>{{number}} {{language}} jobs found</h3>
+		<h5><a href="/export?term={{language}}" download="{{language}}.csv">Export to CSV</a></h5>
+		<h6><a href="/">← Go back</a></h6>
+	</header>
+	<main>
+		{% for list in data %}
+		<div>
+			<h3>{{list.company}}</h3>
+			<h4>{{list.title}}</h4>
+			<a href="{{list.link}}" target="_blank">Apply</a>
+		</div>
+    <hr/>
+    {% endfor %}
+	</main>
+</body>
+
+</html>
